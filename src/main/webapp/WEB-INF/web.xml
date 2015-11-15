@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	<context-param>
+		<param-name>org.eclipse.jetty.servlet.jspPackagePrefix</param-name>
+		<param-value>com.acme</param-value>
+	</context-param>
+	<!-- Filters -->
+	<filter>
+		<filter-name>filtroLogin</filter-name>
+		<filter-class>controller.FiltroLogin</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>filtroLogin</filter-name>
+		<url-pattern>/*.jsp</url-pattern>
+	</filter-mapping>
+
+	<!-- ServLets -->
+	<servlet>
+		<servlet-name>LoginController</servlet-name>
+		<servlet-class>com.controller.LoginController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginController</servlet-name>
+		<url-pattern>/loginController</url-pattern>
+	</servlet-mapping>
+	<!-- Android -->
+	<servlet>
+		<servlet-name>selecao.json</servlet-name>
+		<servlet-class>controller.retornoVeiculos</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>selecao.json</servlet-name>
+		<url-pattern>/selecao.json</url-pattern>
+	</servlet-mapping>
+	<!-- AdicionaAutomovel -->
+	<servlet>
+		<servlet-name>addAuto</servlet-name>
+		<servlet-class>controller.AutomovelCadastraControle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>addAuto</servlet-name>
+		<url-pattern>/addAuto.do</url-pattern>
+	</servlet-mapping>
+	<!-- AlteraAutomovel -->
+	<servlet>
+		<servlet-name>altAuto</servlet-name>
+		<servlet-class>controller.AutomovelAlteraControle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>altAuto</servlet-name>
+		<url-pattern>/altAuto.do</url-pattern>
+	</servlet-mapping>
+	<!-- ConsultaAutomovel -->
+	<servlet>
+		<servlet-name>conAuto</servlet-name>
+		<servlet-class>controller.AutomovelConsultaControle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>conAuto</servlet-name>
+		<url-pattern>/conAuto.do</url-pattern>
+	</servlet-mapping>
+	<!-- ExcluiAutomovel -->
+	<servlet>
+		<servlet-name>removeAuto</servlet-name>
+		<servlet-class>controller.AutomovelExcluiControle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>removeAuto</servlet-name>
+		<url-pattern>/removeAuto.do</url-pattern>
+	</servlet-mapping>
+	<!-- CadastraCliente -->
+	<servlet>
+		<servlet-name>addClie</servlet-name>
+		<servlet-class>controller.ClienteCadastraControle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>addClie</servlet-name>
+		<url-pattern>/addClie.do</url-pattern>
+	</servlet-mapping>
+	<!-- ConsultaCliente -->
+	<servlet>
+		<servlet-name>conClie</servlet-name>
+		<servlet-class>controller.ClienteConsultaControle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>conClie</servlet-name>
+		<url-pattern>/conClie.do</url-pattern>
+	</servlet-mapping>
+	<!-- AlteraCliente -->
+	<servlet>
+		<servlet-name>altClie</servlet-name>
+		<servlet-class>controller.ClienteAlteraControle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>altClie</servlet-name>
+		<url-pattern>/altClie.do</url-pattern>
+	</servlet-mapping>
+	<!-- ExcluiCliente -->
+	<servlet>
+		<servlet-name>removeClie</servlet-name>
+		<servlet-class>controller.ClienteExcluiControle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>removeClie</servlet-name>
+		<url-pattern>/removeClie.do</url-pattern>
+	</servlet-mapping>
+	<!-- ClienteEscolhido -->
+	<servlet>
+		<servlet-name>cliEscolhido</servlet-name>
+		<servlet-class>controller.ClienteEscolhidoControle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cliEscolhido</servlet-name>
+		<url-pattern>/cliEscolhido.do</url-pattern>
+	</servlet-mapping>
+	<!-- PesquisaVeiculogrupo -->
+	<servlet>
+		<servlet-name>pesquisaGrupo</servlet-name>
+		<servlet-class>controller.PesquisaVeiculoGrupoControle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>pesquisaGrupo</servlet-name>
+		<url-pattern>/pesquisaGrupo.do</url-pattern>
+	</servlet-mapping>
+	<!-- PesquisaVeiculonome -->
+	<servlet>
+		<servlet-name>pesquisaNome</servlet-name>
+		<servlet-class>controller.PesquisaVeiculoNomeControle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>pesquisaNome</servlet-name>
+		<url-pattern>/pesquisaNome.do</url-pattern>
+	</servlet-mapping>
+	<!-- ReservaCadastraControle -->
+	<servlet>
+		<servlet-name>addReserva</servlet-name>
+		<servlet-class>controller.ReservaCadastraControle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>addReserva</servlet-name>
+		<url-pattern>/addReserva.do</url-pattern>
+	</servlet-mapping>
+	<!-- ReservaConsultaControle -->
+	<servlet>
+		<servlet-name>conReserva</servlet-name>
+		<servlet-class>controller.ReservaConsultaControle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>conReserva</servlet-name>
+		<url-pattern>/conReserva.do</url-pattern>
+	</servlet-mapping>
+	<!-- VeiculoEscolhidoControle -->
+	<servlet>
+		<servlet-name>veEscolhido</servlet-name>
+		<servlet-class>controller.VeiculoEscolhidoControle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>veEscolhido</servlet-name>
+		<url-pattern>/veEscolhido.do</url-pattern>
+	</servlet-mapping>
+	<!-- CreditoControle -->
+	<servlet>
+		<servlet-name>credito</servlet-name>
+		<servlet-class>controller.CreditoControle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>credito</servlet-name>
+		<url-pattern>/credito.do</url-pattern>
+	</servlet-mapping>
+	<!-- DebitoControle -->
+	<servlet>
+		<servlet-name>debito</servlet-name>
+		<servlet-class>controller.DebitoControle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>debito</servlet-name>
+		<url-pattern>/debito.do</url-pattern>
+	</servlet-mapping>
+	<!-- DebitoControle -->
+	<servlet>
+		<servlet-name>pagamento</servlet-name>
+		<servlet-class>controller.PagamentoController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>pagamento</servlet-name>
+		<url-pattern>/pagamento.do</url-pattern>
+	</servlet-mapping>
+	<!-- relatorio -->
+	<servlet>
+		<servlet-name>buscaRelatorio</servlet-name>
+		<servlet-class>controller.RelatorioControle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>buscaRelatorio</servlet-name>
+		<url-pattern>/buscaRelatorio.do</url-pattern>
+	</servlet-mapping>
+</web-app>
